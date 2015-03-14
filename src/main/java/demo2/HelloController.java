@@ -36,8 +36,5 @@ public class HelloController {
     public void addUser(@RequestParam String name, @RequestParam String password)
     {
         System.out.println("add " + name);
-        User user = new User(name, password);
-        user.setInstruments(Lists.newArrayList(new Instrument("flet", 10), new Instrument("saksofon", 200)));
-        userDAO.save(user);
     }
 }
