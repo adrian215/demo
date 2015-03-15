@@ -39,7 +39,6 @@ public class HelloController {
         QInstrument instrument = QInstrument.instrument;
 //        return query.from(instrument, user).where(user.name.startsWithIgnoreCase("d"), instrument.cost.eq(200)).limit(1).list(instrument);
         return userDAO.findAll();
-        //aa
     }
 
     @RequestMapping("hello-world")
