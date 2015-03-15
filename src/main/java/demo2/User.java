@@ -1,6 +1,7 @@
 package demo2;
 
-import javax.persistence.CascadeType;
+import com.google.common.base.MoreObjects;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -25,6 +26,14 @@ public class User {
     public User(String name, String password) {
         this.name = name;
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("name", name)
+                .add("password", password)
+                .toString();
     }
 
     public String getName() {

@@ -1,5 +1,7 @@
 package demo2;
 
+import com.google.common.base.MoreObjects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,6 +23,13 @@ public class Instrument {
     public Instrument(String name, int cost) {
         this.name = name;
         this.cost = cost;
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("name", name)
+                .toString();
     }
 
     public String getId() {
