@@ -43,7 +43,7 @@ public class HelloController {
 //        List<User> users = userDAO.findAll();
         JPAQuery query = new JPAQuery(entityManager);
         QUser user = new QUser("jan");
-        Iterable<User> users = (userDAO.findAll(userWithInstrumentCosGraterThan(100)));
+        Iterable<User> users = (userDAO.findAll(userWithInstrumentCosGraterThan(101)));
         List<User> userList = Lists.newArrayList(users);
         return userList;
     }
