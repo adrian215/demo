@@ -1,19 +1,21 @@
 package demo2;
 
 import com.google.common.base.MoreObjects;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Adrian on 2015-03-14.
  */
 @Entity
-public class Instrument {
+public class Instrument{
     @Id
     @GeneratedValue
     private String id;
+    @ManyToOne
+    @JoinColumn(name = "user_name")
+    private User user;
     private String name;
     private int cost;
 
@@ -54,5 +56,13 @@ public class Instrument {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

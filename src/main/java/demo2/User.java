@@ -4,6 +4,7 @@ import com.google.common.base.MoreObjects;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class User {
     private String name;
     private String password;
     @OneToMany(cascade = ALL)
+    @JoinColumn(name = "instrument_id")
     private List<Instrument> instruments;
 
     public User() {
