@@ -40,7 +40,7 @@ public class HelloController {
     public List<User> getAll()
     {
         System.out.println("GET");
-        List<User> users = userDAO.findAll();
+//        List<User> users = userDAO.findAll();
         JPAQuery query = new JPAQuery(entityManager);
         QUser user = new QUser("jan");
         Iterable<User> users = (userDAO.findAll(userWithInstrumentCosGraterThan(100)));
